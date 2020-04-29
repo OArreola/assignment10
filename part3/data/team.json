@@ -1,0 +1,32 @@
+{
+  "employees": [
+    {
+      "name": "Leia Organa",
+      "title": "Founder and CEO"
+    },
+    {
+      "name": "Luke Skywalker",
+      "title": "Security"
+    },
+    {
+      "name": "Han Solo",
+      "title": "Import/Export"
+    },
+    {
+      "name": "Chewbacca",
+      "title": "Import/Export"
+    },
+    {
+      "name": "C-3PO",
+      "title": "Communications "
+    },
+    {
+      "name": "R2-D2",
+      "title": "Tech Support"
+    },
+    {
+      "name": "Boba Fett",
+      "title": "Human Resources Headhunter"
+    }
+  ]
+}

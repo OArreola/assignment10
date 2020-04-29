@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Welcome to Vecta Corp.</title>
     <!-- Normal style sheet used for layout and general formatting. -->
-    <link href="styles.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet" />
     <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script>
-		// WRITE YOUR CODE HERE
+    <script>
+      $(function () {
+        $.getJSON("data/team.json", function (jsonData) {
+          $.each(jsonData, function (key, employees) {
+            if (key === "employees") {
+              $.each(employees, function (employee, data) {
+                $("#result").append("<p>" + data.name + "<br>" + data.title + "</p>");
+              });
+            }
+          });
+        });
+      });
     </script>
-</head>
+  </head>
 
-<body>
-<section id="container">
-    <header></header>
-    
-    <nav>
+  <body>
+    <section id="container">
+      <header></header>
+
+      <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="solutions.html">Solutions</a></li>
-            <li><a href="support.html">Support</a></li>
-            <li><a href="contactus.html">Contact Us</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
         </ul>
-    </nav>
-    
-    <section id="content">
-        <h2>The Vecta Corp. Management Team</h2>
+      </nav>
 
-		<div id="result"></div>
+      <section id="content">
+        <h2>The Resistance Team</h2>
+
+        <div id="result"></div>
+      </section>
+
+      <footer></footer>
     </section>
-    
-    <footer></footer>
-</section>
-</body>
+  </body>
 </html>

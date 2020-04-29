@@ -1,38 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Welcome to Vecta Corp.</title>
     <!-- Normal style sheet used for layout and general formatting. -->
-    <link href="styles.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet" />
     <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script>
-		// WRITE YOUR CODE HERE
+    <script>
+      let processXML = function (xmlData) {
+        "use strict";
+        // window.console.log(xmlData);
+        $(xmlData)
+          .find("management")
+          .find("teammember")
+          .each(function (i, member) {
+            let str =
+              "<p><strong>" + $(member).find("name").text() + "</strong><br>" + $(member).find("title").text() + "<br>" + $(member).find("bio").text() + "</p>";
+            $("#team").append(str);
+          });
+      };
+      $(function () {
+        $.get("team.xml", processXML);
+      });
     </script>
-</head>
+  </head>
 
-<body>
-<section id="container">
-    <header></header>
-    
-    <nav>
+  <body>
+    <section id="container">
+      <header></header>
+
+      <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="solutions.html">Solutions</a></li>
-            <li><a href="support.html">Support</a></li>
-            <li><a href="contactus.html">Contact Us</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
         </ul>
-    </nav>
-    
-    <section id="content">
+      </nav>
+
+      <section id="content">
         <h2>The Vecta Corp. Management Team</h2>
 
-		<div id="team"></div>
+        <div id="team"></div>
+      </section>
+
+      <footer></footer>
     </section>
-    
-    <footer></footer>
-</section>
-</body>
+  </body>
 </html>
